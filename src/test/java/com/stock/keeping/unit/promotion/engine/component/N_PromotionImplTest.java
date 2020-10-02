@@ -10,18 +10,18 @@ import org.mockito.junit.MockitoJUnitRunner;
 @RunWith(MockitoJUnitRunner.class)
 class N_PromotionImplTest {
 
-
-    StockKeepingUnit stockKeepingUnitA = new StockKeepingUnit('A',50);
-    StockKeepingUnit stockKeepingUnitB = new StockKeepingUnit('B',30);
+    StockKeepingUnit stockKeepingUnit;
 
     @Test
     public void shouldCalculateForA(){
-        Assert.assertEquals(new N_PromotionImpl().price(stockKeepingUnitA,3),130);
+        stockKeepingUnit = new StockKeepingUnit('A',50);
+        Assert.assertEquals(new N_PromotionImpl().price(stockKeepingUnit,3),130);
     }
 
     @Test
     public void shouldCalculateForB(){
-        Assert.assertEquals(new N_PromotionImpl().price(stockKeepingUnitB,2),45);
+        stockKeepingUnit = new StockKeepingUnit('B',30);
+        Assert.assertEquals(new N_PromotionImpl().price(stockKeepingUnit,2),45);
     }
 
 
