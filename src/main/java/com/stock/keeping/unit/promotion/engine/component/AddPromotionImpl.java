@@ -9,6 +9,6 @@ public class AddPromotionImpl implements AddPromotion {
         if(stockKeepingUnit1.getId()=='C' && stockKeepingUnit2.getId()=='D'){
             return 30;
         }
-        return 0;
+        return stockKeepingUnit1.getPrice()+stockKeepingUnit2.getPrice();
     }
 }

@@ -5,7 +5,7 @@ import com.stock.keeping.unit.promotion.engine.bean.StockKeepingUnit;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.mockito.junit.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
 class N_PromotionImplTest {
