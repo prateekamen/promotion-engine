@@ -5,12 +5,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 class CartTest {
 
-    private Map<StockKeepingUnit,Integer> stockKeepingUnitMap;
+    private List<Character> stockKeepingUnitList;
+
+    private Map<Character,Integer> stockKeepingUnitMap;
     StockKeepingUnit stockKeepingUnitA, stockKeepingUnitB,stockKeepingUnitC, stockKeepingUnitD;
     Cart cart;
     @Before
@@ -24,10 +25,15 @@ class CartTest {
     @Test
     public void scenarioA(){
 
+        stockKeepingUnitList = new ArrayList<>(Arrays.asList('A','B','C'));
+
         stockKeepingUnitMap = new HashMap<>();
-        stockKeepingUnitMap.put(stockKeepingUnitA,1);
-        stockKeepingUnitMap.put(stockKeepingUnitB,1);
-        stockKeepingUnitMap.put(stockKeepingUnitC,1);
+        for(Character c: stockKeepingUnitList){
+            Integer i = stockKeepingUnitMap.get(c);
+            stockKeepingUnitMap.put(c, (i==null)? 1 : i+1);
+        }
+
+
 
         Assert.assertEquals(cart.compute(stockKeepingUnitMap),100);
 

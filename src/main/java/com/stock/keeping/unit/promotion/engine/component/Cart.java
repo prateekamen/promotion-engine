@@ -1,13 +1,13 @@
 package com.stock.keeping.unit.promotion.engine.component;
 
-import com.stock.keeping.unit.promotion.engine.bean.StockKeepingUnit;
-
 import java.util.Map;
 
 public class Cart {
 
-    public int compute(Map<StockKeepingUnit, Integer> stockKeepingUnitMap) {
+    public int compute(Map<Character, Integer> stockKeepingUnitMap) {
+        for(Map.Entry<Character,Integer> entry : stockKeepingUnitMap.entrySet()){
 
+        }
 
         return 0;
     }
