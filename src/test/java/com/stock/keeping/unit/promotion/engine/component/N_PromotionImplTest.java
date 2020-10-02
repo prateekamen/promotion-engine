@@ -15,12 +15,20 @@ class N_PromotionImplTest {
 
     @Mock
     StockKeepingUnit stockKeepingUnit;
+    StockKeepingUnit stockKeepingUnitA = new StockKeepingUnit('A',50);
+    StockKeepingUnit stockKeepingUnitB = new StockKeepingUnit('A',50);
 
     @Test
     public void shouldCalculateForA(){
+        stockKeepingUnit = mock(StockKeepingUnit.class);
         when(stockKeepingUnit.getId()).thenReturn('A');
-        verify(stockKeepingUnit.getId(), atLeast(1));
+        verify(stockKeepingUnit.getId(),atLeastOnce());
         Assert.assertEquals(new N_PromotionImpl().price(stockKeepingUnit,3),130);
+    }
+
+    @Test
+    public void shouldCalculateForB(){
+        Assert.assertEquals(new N_PromotionImpl().price(stockKeepingUnitB,2),130);
     }
 
 }
