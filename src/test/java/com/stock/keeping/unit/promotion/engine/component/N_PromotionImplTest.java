@@ -12,7 +12,7 @@ class N_PromotionImplTest {
 
 
     StockKeepingUnit stockKeepingUnitA = new StockKeepingUnit('A',50);
-    StockKeepingUnit stockKeepingUnitB = new StockKeepingUnit('A',50);
+    StockKeepingUnit stockKeepingUnitB = new StockKeepingUnit('B',30);
 
     @Test
     public void shouldCalculateForA(){
@@ -21,7 +21,8 @@ class N_PromotionImplTest {
 
     @Test
     public void shouldCalculateForB(){
-        Assert.assertEquals(new N_PromotionImpl().price(stockKeepingUnitB,2),130);
+        Assert.assertEquals(new N_PromotionImpl().price(stockKeepingUnitB,2),45);
     }
+
 
 }
